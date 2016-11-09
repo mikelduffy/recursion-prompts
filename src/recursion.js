@@ -7,22 +7,18 @@
 // Example:  5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5);  // 120
 var factorial = function(n) {
-  // Have a counter starting at 1.
-  var counter = n - 1;
-  // Store result.
+  if (n < 0) {
+    return null;
+  } else if (n === 0) {
+    return 1;
+  }
+  var counter = n;
   var result = n;
 
-  // Multiply n by n - counter and store it as result.
-
-  // Continue until (n - counter) < 1.
-  while ((n - counter) < 1) {
-
+  if (counter > 1) {
+    counter--;
     result *= factorial(counter);
-
-    // Increment counter.
-    counter++;
   }
-  // Return result.
   return result;
 };
 
