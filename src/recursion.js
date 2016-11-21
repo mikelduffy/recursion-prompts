@@ -48,6 +48,18 @@ var arraySum = function(array, count = 0) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  if (n === 0) {
+    return true;
+  } else if (n === 1 || n === -1) {
+    return false;
+  } else {
+    if (n < 0) {
+      return isEven(n + 2);
+    }
+    if (n > 0) {
+      return isEven(n - 2);
+    }
+  }
 };
 
 // 5. Sum all integers below a given integer.
